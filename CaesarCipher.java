@@ -1,3 +1,5 @@
+package CaesarCipher;
+
 import edu.duke.*;
 
 public class CaesarCipher {
@@ -28,7 +30,7 @@ public class CaesarCipher {
         return encrypted.toString();
     }
     public void testCaesar() {
-        int key = 17;
+        int key = 15;
         FileResource fr = new FileResource();
         String message = fr.asString();
         String encrypted = encrypt(message, key);
