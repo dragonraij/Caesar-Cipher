@@ -48,10 +48,10 @@ public class TwoStepCaesarCipher {
         return encrypted.toString();
     }
     public void TestTwoStepCaesar() {
-        int key = 0;
+        int key = 14;
         FileResource fr = new FileResource();
         String message = fr.asString();
-        String encrypted = encrypt(message, key, 1);
+        String encrypted = encrypt(message, 26-key, 26-24);
         System.out.println(encrypted);
         //String decrypted = encrypt(encrypted, 26-key);
         //System.out.println(decrypted);
