@@ -28,4 +28,27 @@ public class WordPlay {
     System.out.println(isVowel(input));
     
     }
+    
+    public String replaceVowels(String phrase, char ch){
+        StringBuilder text = new StringBuilder(phrase);
+        
+        for(int i = 0; i < text.length(); i ++){
+            //For each letter check if it is a vowel
+            if(isVowel(text.charAt(i))){
+            //If its a vowel replace it with ch
+            text.setCharAt(i, ch);
+        }
+            //Otherwise does not need to change
+        }
+        
+        //return the resulting string
+        return text.toString();
+    }
+    
+    void testReplaceVowels(){
+    String input = "This is the day";
+    char replacewith = '*';
+    System.out.println("Input is "+ input);
+    System.out.println("Output is "+ (replaceVowels(input, replacewith)));
+    }
 }
