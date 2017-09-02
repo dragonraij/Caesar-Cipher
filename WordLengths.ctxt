@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ testWordLenghts()
+comment0.target=void\ testWordLengths()
 comment1.params=resource\ counts
 comment1.target=void\ countWordLengths(edu.duke.FileResource,\ int[])
-numComments=2
+comment2.params=
+comment2.target=void\ testChomp()
+comment3.params=word
+comment3.target=java.lang.String\ chompWord(java.lang.String)
+numComments=4

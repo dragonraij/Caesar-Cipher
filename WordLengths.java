@@ -11,16 +11,19 @@ import edu.duke.*;
  */
 public class WordLengths {
 
-        void testWordLenghts(){
+        void testWordLengths(){
             FileResource fr = new FileResource();
             int[] counts = new int[20];
             
             countWordLengths(fr, counts);
         }
     
-        void countWordLengths (FileResource resource, int[] counts){
+         private void countWordLengths (FileResource resource, int[] counts){
         
             for(String word : resource.words()){
+                
+                //remove non characters at begining or end of word
+                word = chompWord(word);
                 //if word lenght is less than counts array
                 if(word.length()< counts.length-1 ){
                     //increment count at counts index word length
@@ -38,5 +41,28 @@ public class WordLengths {
                 System.out.println(counts[i] + " words of length " + i);
             }
             
+        }
+        
+        public void testChomp(){
+            System.out.println(chompWord("WorD"));
+            System.out.println(chompWord("word"));
+            System.out.println(chompWord("!Word"));
+            System.out.println(chompWord("Word%"));
+            System.out.println(chompWord("%^Word^*"));
+            System.out.println(chompWord("$Wo&rd$"));
+        }
+        
+        //removes nonletter character from begining and end of string
+        private String chompWord(String word){
+            
+            if(!Character.isLetter(word.charAt(0))){
+                 word = word.substring(1);
+            }
+
+            if(!Character.isLetter(word.charAt(word.length()-1))){
+                 word = word.substring(0,word.length()-1);
+            }
+            
+            return word;
         }
 }
